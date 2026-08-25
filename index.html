@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html>
- 
+
 <head>
     <link rel="stylesheet" href="file.css">
 </head>
 
 <body>
+    <title>George Marchment</title>
+    <nav id="card-nav"></nav>
 
 
     <div id="container">
@@ -32,6 +34,8 @@
             <div id="about">
                 <p style="display:inline;">Links</p><br>
                 <ul>
+                    <li><a href="https://scholar.google.com/citations?user=KqPx4dkAAAAJ&hl=fr&oi=ao">Google Scholar</a>
+                    </li>
                     <li><a href="https://github.com/George-Marchment">GitHub</a></li>
                     <li><a href="www.linkedin.com/in/george-marchment-9900ba1a9">Linkedin</a></li>
                     <li><a href="https://orcid.org/0000-0002-4565-3940 ">ORCID</a></li>
@@ -50,7 +54,8 @@
             <!--PHD-->
             <div class="card">
                 <h2><i class="fas fa-briefcase stroke-transparent"></i>PhD Candidate</h2>
-                <h3>Comparing and querying scientific workflows to enhance reuse</h3>
+                <h3>A graph-based framework for scientific workflows: modelling, abstraction, and visualisation for
+                    reuse</h3>
                 <h4>Supervisors</h4>
                 <ul>
                     <li><a href="https://sarah.cohen-boulakia.eu/">Sarah Cohen-Boulakia</a></li>
@@ -58,19 +63,21 @@
                 </ul>
 
                 <h4>Summary</h4>
-                Over the past two decades, scientific workflows have become the preferred means of
-                developing scientific analyses. In particular, they are designed to define highly reproducible
-                analyses, while facilitating their development, execution, sharing and reuse. In recent times,
-                workflow systems like Nextflow and Snakemake have emerged as valuable tools for bioinformaticians
-                with programming expertise. These systems offer flexible scripting languages that enable swift
-                development and execution, enhancing their usability. Therefore, a quickly growing number of
-                workflows are available on online platforms such as Github and Gitlab, under a distributed and non
-                annotated form, thus hard to query. In order to improve reuse and sharing of scientific workflows,
-                this PhD thesis proposes to design a module to query them efficiently. To achieve this, the
-                following tasks should be considered (1) Index existing workflows; (2) Annotate them by extracting
-                interesting features; (3) Define similarity measures between workflows to compare them at different
-                granularity levels; (4) Design a module capable of querying the indexed and annotated workflows, and
-                using the previously defined similarity measures.
+                Over the past two decades, scientific workflows have become the preferred way to develop scientific
+                analyses. In particular, they are designed to define highly reproducible analyses, while facilitating
+                their development, execution, sharing and reuse. Recently, workflow systems like Nextflow and Snakemake
+                have emerged as valuable tools for bioinformaticians with programming expertise. These systems offer
+                flexible scripting languages that enable swift development and execution, enhancing their usability.
+                Therefore, a growing number of workflows are available on online platforms such as GitHub and
+                GitLab; these workflows can be heterogeneous and complex, thus hard to gain understanding. To improve
+                reuse of scientific workflows, this PhD thesis proposes a framework to gain insight into them
+                efficiently. To achieve this, the following tasks should be considered. (1) Describe workflows in a
+                homogeneous graph-based way. (2) Bridge the gap between heterogeneous source code and homogeneous
+                workflow graphs. (3) Define a manner to automatically simplify the workflow graphs, using elements
+                inherently defined in the workflow. (4) Design a module capable of viewing the simplified graph at
+                different simplification levels, using a visual standard already familiar to developers and linking the
+                workflow logic to this visualisation.
+
             </div>
 
             <!--Diplomas-->
@@ -94,18 +101,46 @@
             <div class="card">
                 <h2><i class="fas fa-briefcase stroke-transparent"></i>Publications</h2>
                 <ul class="blanc">
+
+
+
                     <li>
-                        G. Marchment, B. Brancotte, M. Schmit, F. Lemoine, and S. Cohen- Boulakia. <i>BioFlow-Insight:
+                        George Marchment, Sarah Cohen-Boulakia, Alain Denise and Frédéric Lemoine.
+                        <b>Workflow abstractions for automatic modularity: improving workflow code reusability</b>.
+                        <i>Future Generation Computer Systems</i>, September 2026. (<b>Accepted: waiting to be
+                            published</b>)
+                    </li>
+                    <p></p>
+                    <li>
+                        Lénora Buggenhoudt, George Marchment, Anne-Flore Cabouat, Frédéric Lemoine, Caroline Appert, and
+                        Sarah Cohen-Boulakia.
+                        <b>MetroFlow: Visualizing Bioinformatics Workflow Source Code as Interactive Metro-Maps</b>.
+                        <i>IEEE Working Conference on Software Visualization (VISSOFT)</i>, September 2026.
+                    </li>
+                    <p></p>
+                    <li>
+                        Marie Schmit, Ulysse Le Clanche, George Marchment, Sarah Cohen- Boulakia, Olivier Dameron, Alban
+                        Gaignard, Frédéric Lemoine, and Hervé Ménager.
+                        <b>A Standards-Based Knowledge Graph that Bridges Scientific Workflows, Run-Time Provenance, and
+                            Tool Registries</b>.
+                        <i>Semantic Web Applications and Tools for Health Care and Life Sciences</i>, March 2026. <a
+                            href="https://hal.science/hal-05517640/">https://hal.science/hal-05517640/</a>
+                    </li>
+                    <p></p>
+                    <li>
+                        George Marchment, Bryan Brancotte, Marie Schmit, Frédéric Lemoine, and Sarah Cohen-Boulakia.
+                        <b>BioFlow-Insight:
                             facilitating reuse of Nextflow workflows with structure reconstruction and
-                            visualization</i>. NAR
-                        Genomics and Bioinformatics, 6(3):lqae092, Sept. 2024. <a
+                            visualization</b>.
+                        <i>NAR Genomics and Bioinformatics</i>, 6(3):lqae092, Sept. 2024. <a
                             href="https://doi.org/10.1093/nargab/lqae092">https://doi.org/10.1093/nargab/lqae092</a>
                     </li>
                     <p></p>
                     <li>
-                        M. Djaffardjy, G. Marchment, C. Sebe, R. Blanchet, K. Bellajhame, A. Gaignard, F. Lemoine, and
-                        S. Cohen-Boulakia. <i>Developing and reusing bioinformatics data analysis pipelines using
-                            scientific workflow systems</i>. Computational and Structural Biotechnology Journal,
+                        Marine Djaffardjy, George Marchment, Clémence Sebe, Raphael Blanchet, Khalid Belhajjame, Alban
+                        Gaignard, Frédéric Lemoine, and
+                        Sarah Cohen-Boulakia. <b>Developing and reusing bioinformatics data analysis pipelines using
+                            scientific workflow systems</b>. <i>Computational and Structural Biotechnology Journal</i>,
                         21:2075–2085,
                         Jan. 2023. <a
                             href="https://doi.org/10.1016/j.csbj.2023.03.003">https://doi.org/10.1016/j.csbj.2023.03.003</a>
@@ -117,20 +152,23 @@
                 <h2><i class="fas fa-briefcase stroke-transparent"></i>Book chapters</h2>
                 <ul class="blanc">
                     <li>
-                        S. Cohen-Boulakia, F. Lemoine, G. Marchment, M. Djaffardjy, A. Gaignard, C. Sebe and K.
-                        Bellajhame. <i>Reuse and Reproduce Bioinformatic Pipelines using Scientific Workflow
-                            Systems</i>.
-                        Workflow Systems for Large-Scale Scientific Data Analysis, 2026. <a
-                            href="https://arxiv.org/html/2505.15988v1">https://arxiv.org/html/2505.15988v1</a>
+                        Sarah Cohen-Boulakia, Frédéric Lemoine, George Marchment, Marine Djaffardjy, Alban Gaignard,
+                        Clémence Sebe, and Khalid Belhajjame.
+                        <b>Reuse and Reproduce Bioinformatic Pipelines using Scientific Workflow Systems</b>.
+                        In Berlin Universities Publishing, editor, <i>Workflow systems for large-scale scientific data
+                            analysis</i>. Berlin Universities Publishing, 2026.
+                        <a
+                            href="https://pasteur.hal.science/pasteur-05640482/">https://pasteur.hal.science/pasteur-05640482/</a>
                     </li>
                     <p></p>
                     <li>
-                        S. Cohen-Boulakia, G. Marchment, T. Cokelaer and F. Lemoine. <i>Reprohackathons: Training
-                            efforts
-                            to increase Bioinformatics Reproducibility using Scientific Workflow systems</i>. Workflow
-                        Systems
-                        for Large-Scale Scientific Data Analysis, 2026. <a
-                            href="https://arxiv.org/html/2505.15988v1">https://arxiv.org/html/2505.15988v1</a>
+                        Sarah Cohen-Boulakia, George Marchment, Thomas Cokelaer and Frédéric Lemoine.
+                        <b>Reprohackathons: Training efforts to increase Bioinformatics Reproducibility using Scientific
+                            Workflow systems</b>.
+                        In Berlin Universities Publishing, editor, <i>Workflow systems for large-scale scientific data
+                            analysis</i>. Berlin Universities Publishing, 2026.
+                        <a
+                            href="https://pasteur.hal.science/pasteur-05640478v1">https://pasteur.hal.science/pasteur-05640478v1</a>
                     </li>
             </div>
 
@@ -139,16 +177,19 @@
                 <h2><i class="fas fa-briefcase stroke-transparent"></i>Posters</h2>
                 <ul class="blanc">
                     <li>
-                        Marchment,G. Brancotte,B. Schmit,M. Lemoine,F. and Cohen-Boulakia,S. (2024) <i>BioFlow-Insight:
-                            Leveraging Graph representations to Facilitate the Reuse of Bioinformatics Workflows</i>.
-                        Poster presented at the ACM REP Conference, Rennes, France. <a
+                        George Marchment, Bryan Brancotte, Marie Schmit, Frédéric Lemoine, and Sarah Cohen-Boulakia.
+                        (2024) <b>BioFlow-Insight:
+                            Leveraging Graph representations to Facilitate the Reuse of Bioinformatics Workflows</b>.
+                        Poster presented at the <i>ACM REP</i> Conference, Rennes, France. <a
                             href="https://gitlab.liris.cnrs.fr/sharefair/posters/acm-rep-2024/-/blob/main/Poster%20ACM%20REP.pdf?ref_type=heads">https://gitlab.liris.cnrs.fr/sharefair/posters/acm-rep-2024/-/blob/main/Poster%20ACM%20REP.pdf?ref_type=heads</a>
                     </li>
                     <p></p>
                     <li>
-                        Marchment,G. Schmit,M. Sebe,C. Lemoine,F. Ménager,H. and Cohen-Boulakia,S. (2024)
-                        <i>Representing bioinformatics Nextflow workflows in RO-Crate: challenges and opportunities</i>.
-                        Poster presented at the Semantic Web Applications and Tools for Health Care and Life Science
+                        George Marchment, Marie Schmit, Clémence Sebe, Frédéric Lemoine, Hervé Ménager, and Sarah
+                        Cohen-Boulakia. (2024)
+                        <b>Representing bioinformatics Nextflow workflows in RO-Crate: challenges and opportunities</b>.
+                        Poster presented at the <i>Semantic Web Applications and Tools for Health Care and Life
+                            Science</i>
                         Conference, Leiden, The Netherlands. <a
                             href="https://hal.science/hal-04540040">https://hal.science/hal-04540040 </a>
                     </li>
@@ -159,6 +200,13 @@
             <div class="card">
                 <h2><i class="fas fa-briefcase stroke-transparent"></i>Talks</h2>
                 <ul>
+
+                    <li>
+                        <p class="tag2">MetroFlow: automatic, interactive metro‑map visualisation for enhancing
+                            transparency and comprehensibility of Nextflow workflows
+                            <br><span>JOBIM | <span>2026</span> </span>
+                        </p>
+                    </li>
                     <li>
                         <p class="tag2">MetroFlow: Generating Interactive Metro-Maps from Workflow
                             Code<br><span>Nextflow Summit | <span>2025 |</span> <span> <a
@@ -189,29 +237,52 @@
                 <ul>
                     <li>
                         <p class="tag2">MetroFlow<br><span><a href="https://metroflow.pasteur.cloud/">Link
-                                        to website</a> | <span><a href="https://gitlab.pasteur.fr/sharefair/metroflow">Link
+                                    to website</a> | <span><a href="https://gitlab.pasteur.fr/sharefair/metroflow">Link
                                         to source code</a> </span></span></p>
                     </li>
                     <li>
                         <p class="tag2">BioFlow-Insight<br><span><a href="https://bioflow-insight.pasteur.cloud/">Link
-                                        to website</a> | <span><a href="https://gitlab.liris.cnrs.fr/sharefair/bioflow-insight">Link
+                                    to website</a> | <span><a
+                                        href="https://gitlab.liris.cnrs.fr/sharefair/bioflow-insight">Link
                                         to source code</a> </span></span></p>
                     </li>
                     <li>
-                        <p class="tag2">Github-Crawler<br> <span><a href="https://gitlab.liris.cnrs.fr/sharefair/github-crawler">Link
-                                        to source code</a></span></p>
+                        <p class="tag2">Github-Crawler<br> <span><a
+                                    href="https://gitlab.liris.cnrs.fr/sharefair/github-crawler">Link
+                                    to source code</a></span></p>
                     </li>
             </div>
 
-            
 
 
-            
 
 
-            
+
+
+
         </div>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const nav = document.getElementById('card-nav');
+            const cards = document.querySelectorAll('.card');
+
+            cards.forEach(card => {
+                const heading = card.querySelector('h2');
+                if (!heading) return;
+
+                const text = heading.textContent.trim();
+                const slug = text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+                card.id = slug;
+
+                const link = document.createElement('a');
+                link.href = '#' + slug;
+                link.textContent = text;
+                nav.appendChild(link);
+            });
+        });
+    </script>
 
 </body>
 

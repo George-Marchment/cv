@@ -78,7 +78,7 @@ hr{
     font-family: 'Cutive Mono',monospace;
 }
 #college,#email,#year-graduation,#education,#more-about,#telephone,#fax,#lab{
-    color: #555;
+    color: #555555;
     font-size: 13.5px;
 }
 strong,span{
@@ -210,4 +210,48 @@ strong,span{
         margin: 0 5%;
         margin-bottom: 30px;
     }
+}
+
+#card-nav{
+
+  top: 0;
+  z-index: 100;
+  background: whitesmoke;
+  border-bottom: 1px solid #ddd;
+  padding: 12px 20px;
+  display: flex;
+  flex-wrap: nowrap;          
+  overflow-x: auto;           
+  gap: 10px 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  border-radius: 0 0 12px 12px;
+  scroll-behavior: smooth;    
+  -webkit-overflow-scrolling: touch; 
+}
+
+#card-nav a{
+  font-family: 'Nunito', sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  color: #555555;
+  text-decoration: none;
+  padding: 4px 10px;
+  border-radius: 20px;
+  white-space: nowrap;        
+  flex-shrink: 0;            
+  transition: background 0.2s;
+}
+#card-nav a:hover{
+  background: rgba(9,123,191,0.1);
+}
+
+#card-nav::-webkit-scrollbar{
+  height: 6px;
+}
+#card-nav::-webkit-scrollbar-thumb{
+  background: rgba(0,0,0,0.15);
+  border-radius: 10px;
+}
+#card-nav::-webkit-scrollbar-track{
+  background: transparent;
 }

@@ -1,19 +1,22 @@
-
-html{
-    font-family: 'Open Sans',sans-serif;
+html {
+    font-family: 'Open Sans', sans-serif;
     background: whitesmoke;
 }
-a{
+
+a {
     color: rgb(94, 188, 255);
 }
-hr{
+
+hr {
     background: grey;
 }
-#container{
+
+#container {
     position: relative;
     display: flex;
 }
-#profile{
+
+#profile {
     flex: 15%;
     display: block;
     position: relative;
@@ -21,7 +24,8 @@ hr{
     width: 100%;
     height: 100%;
 }
-#info-cards{
+
+#info-cards {
     flex: 55%;
     display: block;
     margin-top: 5%;
@@ -29,109 +33,148 @@ hr{
     width: 100%;
     height: 100%;
 }
-#image{
+
+#image {
     position: relative;
     overflow: hidden;
 }
-#image,#profile-photo{
+
+#image,
+#profile-photo {
     position: relative;
     width: 90%;
     border-radius: 10px;
 }
-#image > a{
+
+#image>a {
     position: absolute;
-    top:0;
-    left:0;
-    background: rgba(0,0,0,0.5) !important;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5) !important;
     height: 100%;
     width: 100%;
     display: none;
 }
-#image > a > i{
+
+#image>a>i {
     -webkit-text-stroke: 1px #ffffffdd;
     padding: 40%;
 }
-#image:hover a{
+
+#image:hover a {
     display: block;
 }
-#name{
+
+#name {
     font-size: 23px !important;
     line-height: 20px !important;
 }
-#about,.card > ul.blanc > li{
+
+#about,
+.card>ul.blanc>li {
     padding: 0 0 0 15px;
     position: relative;
     display: inline-block;
     width: 100%;
 }
-#about{
+
+#about {
     font-size: 20px !important;
     padding: 0 !important;
 }
-#name, #about > p{
+
+#name,
+#about>p {
     font-weight: bolder;
     font-family: 'Open Sans', sans-serif;
 }
-#email{
+
+#email {
     font-size: 15px !important;
     font-weight: bold !important;
-    font-family: 'Cutive Mono',monospace;
+    font-family: 'Cutive Mono', monospace;
 }
-#college,#email,#year-graduation,#education,#more-about,#telephone,#fax,#lab{
+
+#college,
+#email,
+#year-graduation,
+#education,
+#more-about,
+#telephone,
+#fax,
+#lab {
     color: #555555;
     font-size: 13.5px;
 }
-strong,span{
+
+strong,
+span {
     color: black;
     font-size: 16px;
 }
-#social-links,#about{
+
+#social-links,
+#about {
     display: inline-block;
 }
-#social-links{
+
+#social-links {
     margin-bottom: 12px;
 }
-#social-links a{
+
+#social-links a {
     margin: 0 10px;
 }
-#edit-intro{
+
+#edit-intro {
     display: block;
-    color:#097bbf;
+    color: #097bbf;
     font-family: 'Nunito', sans-serif;
 }
-.fab{
+
+.fab {
     font-size: 1.1em;
 }
-.fab,.fas{
+
+.fab,
+.fas {
     color: whitesmoke;
 }
-#about > a{
+
+#about>a {
     top: 4px;
     right: 8px;
 }
-.edit{
+
+.edit {
     top: 19px;
     right: 10px;
 }
-#about > a, .edit{
+
+#about>a,
+.edit {
     position: absolute;
     font-size: 15px !important;
 }
+
 .stroke-transparent {
- -webkit-text-stroke: 1px #000;
- -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 1px #000;
+    -webkit-text-fill-color: transparent;
 }
-.blue{
+
+.blue {
     color: #097bbf !important;
     font-size: 13px;
 }
+
 .stroke-transparent-blue {
- -webkit-text-stroke: 1px #097bbf;
- -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 1px #097bbf;
+    -webkit-text-fill-color: transparent;
 }
-.card{
-    box-shadow: 0 3px 10px 0 rgba(0,0,0,.1);
-    overflow: hidden;   
+
+.card {
+    box-shadow: 0 3px 10px 0 rgba(0, 0, 0, .1);
+    overflow: hidden;
     margin-bottom: 30px;
     padding: 15px 30px 30px 30px;
     background-color: #fff;
@@ -139,16 +182,18 @@ strong,span{
 
 }
 
-.card > p{
+.card>p {
     color: #0e141e;
     font-weight: bolder;
     font-size: 18px;
     line-height: 2;
 }
-.card > p > i{
+
+.card>p>i {
     font-size: 18px;
 }
-.card > a{
+
+.card>a {
     font-weight: 400;
     font-size: 15px;
     margin: 0;
@@ -161,97 +206,139 @@ strong,span{
     outline: none;
     cursor: pointer;
 }
-.card > ul.blanc{
+
+.card>ul.blanc {
     list-style-type: none;
 }
-.tags{
+
+.tags {
     font-size: 17px;
     font-weight: bolder;
 }
-.tags ~ a{
+
+.tags~a {
     display: none !important;
 }
-.tags span{
-    font-size: 14px;
+
+.tags span {
     font-weight: normal;
     color: #0e141e;
 }
-.tags span span{
+
+.tags span span {
     color: #738f93;
 }
 
-.tag2{
-    font-size: 17px;
+#my-grey {
+   color: #738f93;
 }
-.tag2 ~ a{
+
+
+
+
+
+.tag2~a {
     display: none !important;
 }
-.tag2 span{
+
+.tag2 span {
     font-size: 14px;
     font-weight: normal;
     color: #0e141e;
 }
-.tag2 span span{
+
+.tag2 span span {
     color: #738f93;
 }
-@media screen and (max-width:1090px){
-    #profile{
+
+@media screen and (max-width:1090px) {
+    #profile {
         margin-left: 5%;
     }
 }
-@media screen and (max-width:850px){
-    #container{
+
+@media screen and (max-width:850px) {
+    #container {
         display: block;
     }
-    #profile{
+
+    #profile {
         width: 90%;
     }
-    .card{
+
+    .card {
         margin: 0 5%;
         margin-bottom: 30px;
     }
 }
 
-#card-nav{
-
-  top: 0;
-  z-index: 100;
-  background: whitesmoke;
-  border-bottom: 1px solid #ddd;
-  padding: 12px 20px;
-  display: flex;
-  flex-wrap: nowrap;          
-  overflow-x: auto;           
-  gap: 10px 20px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-  border-radius: 0 0 12px 12px;
-  scroll-behavior: smooth;    
-  -webkit-overflow-scrolling: touch; 
+#card-nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: whitesmoke;
+    border-bottom: 1px solid #ddd;
+    padding: 12px 20px;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: visible;
+    gap: 10px 20px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    border-radius: 0 0 12px 12px;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
 }
 
-#card-nav a{
-  font-family: 'Nunito', sans-serif;
-  font-size: 14px;
-  font-weight: bold;
-  color: #555555;
-  text-decoration: none;
-  padding: 4px 10px;
-  border-radius: 20px;
-  white-space: nowrap;        
-  flex-shrink: 0;            
-  transition: background 0.2s;
-}
-#card-nav a:hover{
-  background: rgba(9,123,191,0.1);
+.nav-item {
+    position: relative;
+    flex-shrink: 0;
 }
 
-#card-nav::-webkit-scrollbar{
-  height: 6px;
+.nav-title {
+    display: inline-block;
+    font-family: 'Nunito', sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    color: #555555;
+    text-decoration: none;
+    padding: 4px 10px;
+    border-radius: 20px;
+    white-space: nowrap;
+    transition: background 0.2s;
 }
-#card-nav::-webkit-scrollbar-thumb{
-  background: rgba(0,0,0,0.15);
-  border-radius: 10px;
+
+.nav-title:hover {
+    background: rgba(9, 123, 191, 0.1);
 }
-#card-nav::-webkit-scrollbar-track{
-  background: transparent;
+
+.nav-dropdown {
+    display: none;
+    position: fixed;
+    margin-top: 6px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+    padding: 6px 0;
+    min-width: 160px;
+    z-index: 9999;
+}
+
+.nav-dropdown.open {
+    display: block;
+}
+
+.nav-dropdown a {
+    display: block;
+    padding: 8px 16px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 13.5px;
+    font-weight: 600;
+    color: #555555;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.nav-dropdown a:hover {
+    background: rgba(9, 123, 191, 0.08);
 }

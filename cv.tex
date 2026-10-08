@@ -1,0 +1,133 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[margin=2cm]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{xurl}
+\usepackage[hidelinks]{hyperref}
+\usepackage{microtype}
+
+\definecolor{linkblue}{RGB}{20,60,140}
+\hypersetup{colorlinks=true, urlcolor=linkblue, linkcolor=linkblue}
+\urlstyle{same}
+\pagestyle{plain}
+\setlength{\parindent}{0pt}
+
+\titleformat{\section}{\large\scshape}{}{0em}{}[\vspace{-0.6ex}\titlerule]
+\titlespacing*{\section}{0pt}{2.2ex}{1.2ex}
+\titleformat{\subsection}{\normalsize\itshape}{}{0em}{}
+\titlespacing*{\subsection}{0pt}{1.4ex}{0.6ex}
+
+\newlist{publist}{enumerate}{1}
+\setlist[publist]{leftmargin=2.6em, labelsep=0.6em, itemsep=0.5ex,
+                  topsep=0.3ex, align=left}
+
+% \entry{title}{date}: title line with an optional right-aligned date
+\newcommand{\entry}[2]{\par\addvspace{0.9ex}%
+  \begin{minipage}[t]{\dimexpr\linewidth-3cm}\raggedright #1\strut\end{minipage}%
+  \hfill\begin{minipage}[t]{2.8cm}\raggedleft #2\end{minipage}\par}
+% \meta{text}{date}: secondary line under an entry
+\newcommand{\meta}[2]{\nopagebreak{\small\color{black!75}%
+  \if\relax\detokenize{#2}\relax #1\else
+  \begin{minipage}[t]{\dimexpr\linewidth-3cm}\raggedright #1\strut\end{minipage}%
+  \hfill\begin{minipage}[t]{2.8cm}\raggedleft #2\end{minipage}\fi\par}}
+
+\begin{document}
+
+\begin{center}
+{\LARGE\scshape George Marchment}\\[1.2ex]
+PhD Student, Université Paris-Saclay, LISN Laboratory\\[0.4ex]
+\href{mailto:george.marchment@universite-paris-saclay.fr}{george.marchment[at]universite-paris-saclay.fr}\\[0.4ex]
+\href{https://scholar.google.com/citations?user=KqPx4dkAAAAJ&hl=fr&oi=ao}{Google Scholar} \enspace$\cdot$\enspace \href{https://github.com/George-Marchment}{GitHub} \enspace$\cdot$\enspace \href{https://linkedin.com/in/george-marchment-9900ba1a9}{Linkedin} \enspace$\cdot$\enspace \href{https://orcid.org/0000-0002-4565-3940}{ORCID}
+\end{center}
+
+\medskip
+I am a 3rd year PhD student at Université Paris-Saclay. My research interests include data science, graph algorithms and bioinformatics.
+
+\section*{Education}
+\entry{\textbf{PhD Candidate}}{}
+\meta{Thesis: \emph{A graph-based framework for scientific workflows: modelling, abstraction, and visualisation for reuse}}{}
+\meta{Supervisors: \href{https://sarah.cohen-boulakia.eu/}{Sarah Cohen-Boulakia} and \href{https://research.pasteur.fr/fr/member/frederic-lemoine/}{Frédéric Lemoine}}{}
+
+\entry{\textbf{Master's Degree in Bioinformatics, Computational Biology Track}}{2021--2023}
+\meta{\href{https://digicosme.cnrs.fr/labex-digicosme-bourses-master/}{Digicosme scholarship for excellence}}{}
+\meta{Université Paris-Saclay}{}
+
+\entry{\textbf{Double Bachelor's Degree in Mathematics and Computer Science}}{2018--2021}
+\meta{Université Paris-Saclay}{}
+
+\section*{Publications}
+\subsection*{Peer-reviewed international journals}
+\begin{publist}[label={[J\arabic*]}]
+  \item \textbf{George Marchment}, Sarah Cohen-Boulakia, Alain Denise and Frédéric Lemoine. Workflow abstractions for automatic modularity: improving workflow code reusability. \emph{Future Generation Computer Systems}, 187:108776, February 2027. \url{https://doi.org/10.1016/j.future.2026.108776} (PDF: \url{https://hal.science/hal-05737452})
+  \item \textbf{George Marchment}, Bryan Brancotte, Marie Schmit, Frédéric Lemoine, and Sarah Cohen-Boulakia. BioFlow-Insight: facilitating reuse of Nextflow workflows with structure reconstruction and visualization. \emph{NAR Genomics and Bioinformatics}, 6(3):lqae092, September 2024. \url{https://doi.org/10.1093/nargab/lqae092}
+  \item Marine Djaffardjy, \textbf{George Marchment}, Clémence Sebe, Raphael Blanchet, Khalid Belhajjame, Alban Gaignard, Frédéric Lemoine, and Sarah Cohen-Boulakia. Developing and reusing bioinformatics data analysis pipelines using scientific workflow systems. \emph{Computational and Structural Biotechnology Journal}, 21:2075--2085, January 2023. \url{https://doi.org/10.1016/j.csbj.2023.03.003}
+\end{publist}
+
+\subsection*{Peer-reviewed international conferences}
+\begin{publist}[label={[C\arabic*]}]
+  \item Lénora Buggenhoudt, \textbf{George Marchment}, Anne-Flore Cabouat, Frédéric Lemoine, Caroline Appert, and Sarah Cohen-Boulakia. MetroFlow: Visualizing Bioinformatics Workflow Source Code as Interactive Metro-Maps. \emph{IEEE Working Conference on Software Visualization (VISSOFT)}, September 2026. \url{https://hal.science/hal-05737427v1}
+  \item Marie Schmit, Ulysse Le Clanche, \textbf{George Marchment}, Sarah Cohen-Boulakia, Olivier Dameron, Alban Gaignard, Frédéric Lemoine, and Hervé Ménager. A Standards-Based Knowledge Graph that Bridges Scientific Workflows, Run-Time Provenance, and Tool Registries. \emph{Semantic Web Applications and Tools for Health Care and Life Sciences}, March 2026. \url{https://hal.science/hal-05517640/}
+\end{publist}
+
+\subsection*{Posters}
+\begin{publist}[label={[P\arabic*]}]
+  \item \textbf{George Marchment}, Bryan Brancotte, Marie Schmit, Frédéric Lemoine, and Sarah Cohen-Boulakia. (2024) BioFlow-Insight: Leveraging Graph representations to Facilitate the Reuse of Bioinformatics Workflows. Poster presented at the \emph{ACM REP} Conference, Rennes, France. \url{https://gitlab.liris.cnrs.fr/sharefair/posters/acm-rep-2024/-/blob/main/Poster\%20ACM\%20REP.pdf?ref_type=heads}
+  \item \textbf{George Marchment}, Marie Schmit, Clémence Sebe, Frédéric Lemoine, Hervé Ménager, and Sarah Cohen-Boulakia. (2024) Representing bioinformatics Nextflow workflows in RO-Crate: challenges and opportunities. Poster presented at the \emph{Semantic Web Applications and Tools for Health Care and Life Science} Conference, Leiden, The Netherlands. \url{https://hal.science/hal-04540040}
+\end{publist}
+
+\subsection*{Tutorials given}
+\entry{\textbf{Computational Reproducibility With Scientific Workflows: Analysing viral genomes with Nextflow}}{2025}
+\meta{ACM REP \enspace$\cdot$\enspace Tutorial: \url{https://george-marchment.github.io/acmrep25/}}{}
+
+\subsection*{Book chapters}
+\begin{publist}[label={[B\arabic*]}]
+  \item Sarah Cohen-Boulakia, Frédéric Lemoine, \textbf{George Marchment}, Marine Djaffardjy, Alban Gaignard, Clémence Sebe, and Khalid Belhajjame. Reuse and Reproduce Bioinformatic Pipelines using Scientific Workflow Systems. In Berlin Universities Publishing, editor, \emph{Workflow systems for large-scale scientific data analysis}. Berlin Universities Publishing, 2026. \url{https://pasteur.hal.science/pasteur-05640482/}
+  \item Sarah Cohen-Boulakia, \textbf{George Marchment}, Thomas Cokelaer and Frédéric Lemoine. Reprohackathons: Training efforts to increase Bioinformatics Reproducibility using Scientific Workflow systems. In Berlin Universities Publishing, editor, \emph{Workflow systems for large-scale scientific data analysis}. Berlin Universities Publishing, 2026. \url{https://pasteur.hal.science/pasteur-05640478v1}
+\end{publist}
+
+\section*{Talks}
+\subsection*{Peer-reviewed international conferences}
+\entry{BioFlow-Insight: Leveraging Graph representations to Facilitate the Reuse of Bioinformatics Workflows}{2024}
+\meta{ACM REP}{}
+
+\subsection*{Peer-reviewed national conferences}
+\entry{MetroFlow: automatic, interactive metro-map visualisation for enhancing transparency and comprehensibility of Nextflow workflows}{2026}
+\meta{JOBIM}{}
+
+\subsection*{Others}
+\entry{Facilitating reuse of Nextflow workflows with structure reconstruction and metro-map visualisation with BioFlow-Insight and MetroFlow}{September 2026}
+\meta{FAIR metadata for bioinformatics software workshop at \emph{ECCB 2026}}{}
+
+\entry{Workflow abstractions to improve understandability and reusability of workflow code}{April 2026}
+\meta{Visiting the \emph{VIDA Center} (New York University)}{}
+
+\entry{MetroFlow: Generating Interactive Metro-Maps from Workflow Code}{}
+\meta{ShareFAIR annual meeting (Pasteur Institute)}{December 2025}
+\meta{Nextflow Summit \enspace$\cdot$\enspace Talk: \url{https://summit.nextflow.io/2025/virtual/agenda/metroflow-generating-interactive-metro-maps-from-workflow-code/}}{October 2025}
+
+\entry{Facilitating the reuse of scientific workflows with structure abstraction}{June 2025}
+\meta{Visiting the \emph{Software Sustainability Institute} (University of Manchester)}{}
+
+\entry{BioFlow-Insight: facilitating reuse of Nextflow workflows with structure reconstruction and visualisation}{}
+\meta{ShareFAIR annual meeting (Pasteur Institute)}{November 2024}
+\meta{Team seminar (Paris-Saclay University, LISN)}{January 2025}
+
+\entry{Initial findings on workflow process similarity}{November 2023}
+\meta{ShareFAIR kickoff (Paris-Saclay University)}{}
+
+\section*{Software}
+\entry{\textbf{MetroFlow}}{}
+\meta{Website: \url{https://metroflow.pasteur.cloud/} \enspace$\cdot$\enspace Source code: \url{https://gitlab.pasteur.fr/sharefair/metroflow}}{}
+
+\entry{\textbf{BioFlow-Insight}}{}
+\meta{Website: \url{https://bioflow-insight.pasteur.cloud/} \enspace$\cdot$\enspace Source code: \url{https://gitlab.liris.cnrs.fr/sharefair/bioflow-insight}}{}
+
+\entry{\textbf{Github-Crawler}}{}
+\meta{Source code: \url{https://gitlab.liris.cnrs.fr/sharefair/github-crawler}}{}
+
+\end{document}

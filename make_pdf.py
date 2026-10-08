@@ -30,7 +30,7 @@ PUB_LABELS = [("journal", "J"), ("conference", "C"), ("book", "B"), ("poster", "
 # Sections whose entry titles are not set in bold (long titles read better plain).
 PLAIN_TITLE_SECTIONS = {"Talks"}
 
-DATE_RE = re.compile(r"(?:[A-Za-zéû]+\s+)?\d{4}(?:--\d{4})?")
+DATE_RE = re.compile(r"(?:[A-Za-zéû]+\s+)?\d{4}(?:--(?:\d{4}|present))?")
 
 # --------------------------------------------------------------------------- #
 # Text helpers
@@ -171,8 +171,12 @@ def render_phd(card):
     for h4 in card.find_all("h4"):
         if "supervisor" in h4.get_text().lower():
             sup_ul = h4.find_next_sibling("ul")
-    out = [r"\entry{\textbf{%s}}{}" % title,
-           r"\meta{Thesis: \emph{%s}}{}" % thesis]
+    info = card.find("p", class_="tags")
+    parts = [p.strip() for p in tidy(inline(info)).split("|")] if info else []
+    date = " ".join(p for p in parts if DATE_RE.fullmatch(p))
+    out = [r"\entry{\textbf{%s}}{%s}" % (title, date)]
+    out += [r"\meta{%s}{}" % p for p in parts if p and not DATE_RE.fullmatch(p)]
+    out.append(r"\meta{Thesis: \emph{%s}}{}" % thesis)
     if sup_ul is not None:
         names = [tidy(inline(li)) for li in sup_ul.find_all("li")]
         out.append(r"\meta{Supervisors: %s}{}" % " and ".join(names))

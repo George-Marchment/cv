@@ -2,7 +2,6 @@
 """Build a minimalist, academic-style LaTeX/PDF CV from index.html.
 
 The content is taken verbatim from the HTML page; only the layout changes.
-The PhD summary is deliberately left out.
 
 sudo apt install texlive-latex-extra
 
@@ -150,8 +149,13 @@ def entry_source(li):
     return None
 
 
+def own_items(ul):
+    """The <li> of `ul` itself, not those of a nested list (they may sit in <small>)."""
+    return [li for li in ul.find_all("li") if li.find_parent("ul") is ul]
+
+
 def render_list(ul, heading, section):
-    items = ul.find_all("li")
+    items = own_items(ul)
     if not items:
         return ""
     if all(entry_source(li) is None for li in items):
@@ -160,17 +164,29 @@ def render_list(ul, heading, section):
         body = "\n".join(r"  \item %s" % tidy(inline(li, bold="%s")) for li in items)
         return "\\begin{publist}[%s]\n%s\n\\end{publist}\n" % (opts, body)
     plain = section in PLAIN_TITLE_SECTIONS
-    return "\n".join(render_entry(entry_source(li) or li, plain) for li in items)
+    return "\n".join(render_entry(entry_source(li) or li, plain) + render_sublist(li)
+                     for li in items)
+
+
+def render_sublist(li):
+    """A nested list under an entry (e.g. courses), as a compact bullet list."""
+    sub = li.find("ul", recursive=False)
+    if sub is None:
+        return ""
+    body = "\n".join(r"  \item %s" % tidy(inline(c)) for c in own_items(sub))
+    return "\\begin{sublist}\n%s\n\\end{sublist}\n" % body
 
 
 def render_phd(card):
-    """The PhD card: position, thesis title and supervisors (no summary)."""
+    """The PhD card: position, thesis title, supervisors and summary."""
     title = escape(card.h2.get_text(" ", strip=True))
     thesis = tidy(inline(card.find("h3", class_="no-nav")))
-    sup_ul = None
+    sup_ul = summary_h4 = None
     for h4 in card.find_all("h4"):
         if "supervisor" in h4.get_text().lower():
             sup_ul = h4.find_next_sibling("ul")
+        elif "summary" in h4.get_text().lower():
+            summary_h4 = h4
     info = card.find("p", class_="tags")
     parts = [p.strip() for p in tidy(inline(info)).split("|")] if info else []
     date = " ".join(p for p in parts if DATE_RE.fullmatch(p))
@@ -180,6 +196,18 @@ def render_phd(card):
     if sup_ul is not None:
         names = [tidy(inline(li)) for li in sup_ul.find_all("li")]
         out.append(r"\meta{Supervisors: %s}{}" % " and ".join(names))
+    if summary_h4 is not None:
+        # The summary is loose text after the <h4>; blank lines separate paragraphs.
+        paras = [""]
+        for c in summary_h4.next_siblings:
+            if isinstance(c, NavigableString) and c.__class__.__name__ != "Comment":
+                chunks = re.split(r"\n\s*\n", str(c))
+                paras[-1] += escape(chunks[0])
+                paras += [escape(chunk) for chunk in chunks[1:]]
+            else:
+                paras[-1] += inline(c)
+        paras = [tidy(p) for p in paras if p.strip()]
+        out.append("\\begin{summary}\n%s\n\\end{summary}" % "\n\n".join(paras))
     return "\n".join(out) + "\n"
 
 
@@ -231,6 +259,14 @@ PREAMBLE = r"""\documentclass[10pt,a4paper]{article}
 \newcommand{\entry}[2]{\par\addvspace{0.9ex}%
   \begin{minipage}[t]{\dimexpr\linewidth-3cm}\raggedright #1\strut\end{minipage}%
   \hfill\begin{minipage}[t]{2.8cm}\raggedleft #2\end{minipage}\par}
+\newlist{sublist}{itemize}{1}
+\setlist[sublist]{label=\textbullet, leftmargin=2em, labelsep=0.6em, itemsep=0.2ex, parsep=0pt,
+                  topsep=0.4ex, font=\small, before=\small}
+
+% summary: indented, justified paragraphs under an entry
+\newenvironment{summary}{\par\addvspace{0.6ex}\small
+  \begin{list}{}{\leftmargin=1em\rightmargin=0pt\topsep=0pt
+  \parsep=0.5ex\itemsep=0pt}\item\relax}{\end{list}}
 % \meta{text}{date}: secondary line under an entry
 \newcommand{\meta}[2]{\nopagebreak{\small\color{black!75}%
   \if\relax\detokenize{#2}\relax #1\else

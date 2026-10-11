@@ -30,6 +30,14 @@
 \newcommand{\entry}[2]{\par\addvspace{0.9ex}%
   \begin{minipage}[t]{\dimexpr\linewidth-3cm}\raggedright #1\strut\end{minipage}%
   \hfill\begin{minipage}[t]{2.8cm}\raggedleft #2\end{minipage}\par}
+\newlist{sublist}{itemize}{1}
+\setlist[sublist]{label=\textbullet, leftmargin=2em, labelsep=0.6em, itemsep=0.2ex, parsep=0pt,
+                  topsep=0.4ex, font=\small, before=\small}
+
+% summary: indented, justified paragraphs under an entry
+\newenvironment{summary}{\par\addvspace{0.6ex}\small
+  \begin{list}{}{\leftmargin=1em\rightmargin=0pt\topsep=0pt
+  \parsep=0.5ex\itemsep=0pt}\item\relax}{\end{list}}
 % \meta{text}{date}: secondary line under an entry
 \newcommand{\meta}[2]{\nopagebreak{\small\color{black!75}%
   \if\relax\detokenize{#2}\relax #1\else
@@ -52,11 +60,27 @@ I am a 3rd year PhD candidate studying computer science at Paris-Saclay Universi
 \entry{\textbf{PhD Candidate}}{2023--present}
 \meta{Paris-Saclay University}{}
 \meta{Thesis: \emph{A graph-based framework for scientific workflows: modelling, abstraction, and visualisation for reuse}}{}
-\meta{Supervisors: \href{https://sarah.cohen-boulakia.eu/}{Sarah Cohen-Boulakia} and \href{https://research.pasteur.fr/fr/member/frederic-lemoine/}{Frédéric Lemoine}}{}
+\meta{Supervisors: \href{https://sarah.cohen-boulakia.eu/}{Sarah Cohen-Boulakia} (Paris-Saclay University) and \href{https://research.pasteur.fr/fr/member/frederic-lemoine/}{Frédéric Lemoine} (Pasteur Institute)}{}
+\begin{summary}
+\textbf{Modern research has become increasingly data-intensive}, with fields such as bioinformatics generating vast amounts of raw data. Turning this data into meaningful results relies on large, complex analysis pipelines, making effective data management and integration central to scientific discovery. At the same time, growing awareness of the reproducibility crisis has highlighted the need to build these pipelines in a more reproducible way, since science advances by reproducing and reusing prior work.
 
-\entry{\textbf{Master's Degree in Bioinformatics, Computational Biology Track}}{2021--2023}
+Scientific workflows, and in particular code-based systems such as Nextflow and Snakemake, have emerged as a solution to provide better reproducibility, offering software encapsulation, scalability and flexibility. Reusing workflows lets researchers build on existing components and supports \textbf{collaborative and interdisciplinary research}. However, workflows are often complex and defined in heterogeneous ways, which makes them hard to share, understand and discover, ultimately limiting their reuse.
+
+To provide an element of solution to this problem, this PhD work proposes a framework that: (i) models heterogeneous workflows as a \textbf{homogeneous graph structure}, bridging the implicit structures of code-based implementations and explicit workflow representations; (ii) formalises graph-based methods to automatically \textbf{generate simplified representations of workflows at multiple levels of granularity}, reducing their perceived complexity; and (iii) applies \textbf{information visualisation} principles to present these structures with a \textbf{consistent visual metaphor}, enabling interactive exploration across simplification levels and linking visuals directly to the source code. These solutions have been implemented in multiple open-source tools, making them directly available to the research community.
+
+Together, these contributions, at the intersection of \textbf{data management and integration}, \textbf{visualisation} and \textbf{open-source software development}, aim to support the overarching goal of enhancing workflow transparency and understandability, in order to facilitate workflow reuse.
+\end{summary}
+
+\entry{\textbf{Master's Degree in Bioinformatics, Computational Biology Track, with First Class Honours}}{2021--2023}
 \meta{\href{https://digicosme.cnrs.fr/labex-digicosme-bourses-master/}{Digicosme scholarship for excellence}}{}
 \meta{Paris-Saclay University}{}
+\begin{sublist}
+  \item \textbf{Advanced Databases:} query optimisation and rewriting, indexing structures, query plans, schema optimisation and data storage strategies.
+  \item \textbf{Massive Data Project:} designed and built a web application to query and enrich a large database. Covered client/server architecture, database design for data volume, security awareness and user needs.
+  \item \textbf{Omics Data Analysis and Integrative Biology:} statistical modelling and integration of heterogeneous high-throughput data.
+  \item \textbf{Models for Machine Learning:} supervised regression and classification, cross-validation, model selection, random forests, LASSO, SVM.
+  \item \textbf{Advanced Machine Learning:} semi-supervised learning, ensemble learning, out-of-distribution learning, transfer learning. Included a group project reproducing a recently published paper and writing a critical report.
+\end{sublist}
 
 \entry{\textbf{Double Bachelor's Degree in Mathematics and Computer Science}}{2018--2021}
 \meta{Université Paris-Saclay}{}
@@ -92,15 +116,9 @@ I am a 3rd year PhD candidate studying computer science at Paris-Saclay Universi
 \end{publist}
 
 \section*{Talks}
-\subsection*{Peer-reviewed international conferences}
-\entry{BioFlow-Insight: Leveraging Graph representations to Facilitate the Reuse of Bioinformatics Workflows}{June 2024}
-\meta{ACM REP}{}
+\entry{A graph-based framework for scientific workflows: modelling, abstraction, and visualisation for reuse (Planned)}{November 2026}
+\meta{\emph{EMBL} Scientific Workflows Club}{}
 
-\subsection*{Peer-reviewed national conferences}
-\entry{MetroFlow: automatic, interactive metro-map visualisation for enhancing transparency and comprehensibility of Nextflow workflows}{June 2026}
-\meta{JOBIM}{}
-
-\subsection*{Others}
 \entry{Facilitating reuse of Nextflow workflows with structure reconstruction and metro-map visualisation with BioFlow-Insight and MetroFlow}{September 2026}
 \meta{FAIR metadata for bioinformatics software workshop at \emph{ECCB 2026}}{}
 

@@ -18,7 +18,8 @@
                     alt="Profile-Image">
             </div>
             <p id="name">George Marchment<br><span id="email">george.marchment[at]universite-paris-saclay.fr</span></p>
-            <p id="designation">PhD candidate<br><span id="college">Paris-Saclay University</span><br><span id="lab">LISN
+            <p id="designation">PhD candidate<br><span id="college">Paris-Saclay University</span><br><span
+                    id="lab">LISN
                     Laboratory</span></p>
 
 
@@ -26,7 +27,8 @@
             <p>
             <div id="about">
                 <p style="display:inline;">About</p><br>
-                I am a 3rd year PhD candidate studying computer science at Paris-Saclay University. My research interests include data science, graph algorithms, visualisation, AI research and bioinformatics.
+                I am a 3rd year PhD candidate studying computer science at Paris-Saclay University. My research
+                interests include data science, graph algorithms, visualisation, AI research and bioinformatics.
             </div>
             </p>
 
@@ -59,25 +61,38 @@
                     reuse</h3>
                 <h4>Supervisors</h4>
                 <ul>
-                    <li><a href="https://sarah.cohen-boulakia.eu/">Sarah Cohen-Boulakia</a></li>
-                    <li><a href="https://research.pasteur.fr/fr/member/frederic-lemoine/">Frédéric Lemoine</a></li>
+                    <li><a href="https://sarah.cohen-boulakia.eu/">Sarah Cohen-Boulakia</a> (Paris-Saclay University)
+                    </li>
+                    <li><a href="https://research.pasteur.fr/fr/member/frederic-lemoine/">Frédéric Lemoine</a> (Pasteur
+                        Institute)</li>
                 </ul>
 
                 <h4>Summary</h4>
-                Over the past two decades, scientific workflows have become the preferred way to develop scientific
-                analyses. In particular, they are designed to define highly reproducible analyses, while facilitating
-                their development, execution, sharing and reuse. Recently, workflow systems like Nextflow and Snakemake
-                have emerged as valuable tools for bioinformaticians with programming expertise. These systems offer
-                flexible scripting languages that enable swift development and execution, enhancing their usability.
-                Therefore, a growing number of workflows are available on online platforms such as GitHub and
-                GitLab; these workflows can be heterogeneous and complex, thus hard to gain understanding. To improve
-                reuse of scientific workflows, this PhD thesis proposes a framework to gain insight into them
-                efficiently. To achieve this, the following tasks should be considered. (1) Describe workflows in a
-                homogeneous graph-based way. (2) Bridge the gap between heterogeneous source code and homogeneous
-                workflow graphs. (3) Define a manner to automatically simplify the workflow graphs, using elements
-                inherently defined in the workflow. (4) Design a module capable of viewing the simplified graph at
-                different simplification levels, using a visual standard already familiar to developers and linking the
-                workflow logic to this visualisation.
+                <b>Modern research has become increasingly data-intensive</b>, with fields such as bioinformatics
+                generating vast amounts of raw data. Turning this data into meaningful results relies on large, complex
+                analysis pipelines, making effective data management and integration central to scientific discovery. At
+                the same time, growing awareness of the reproducibility crisis has highlighted the need to build these
+                pipelines in a more reproducible way, since science advances by reproducing and reusing prior work.
+
+                Scientific workflows, and in particular code-based systems such as Nextflow and Snakemake, have emerged
+                as a solution to provide better reproducibility, offering software encapsulation, scalability and
+                flexibility. Reusing workflows lets researchers build on existing components and supports
+                <b>collaborative and interdisciplinary research</b>. However, workflows are often complex and defined in
+                heterogeneous ways, which makes them hard to share, understand and discover, ultimately limiting their
+                reuse.
+
+                To provide an element of solution to this problem, this PhD work proposes a framework that: (i) models
+                heterogeneous workflows as a <b>homogeneous graph structure</b>, bridging the implicit structures of
+                code-based implementations and explicit workflow representations; (ii) formalises graph-based methods to
+                automatically <b>generate simplified representations of workflows at multiple levels of granularity</b>,
+                reducing their perceived complexity; and (iii) applies <b>information visualisation</b> principles to
+                present these structures with a <b>consistent visual metaphor</b>, enabling interactive exploration
+                across simplification levels and linking visuals directly to the source code. These solutions have been
+                implemented in multiple open-source tools, making them directly available to the research community.
+
+                Together, these contributions, at the intersection of <b>data management and integration</b>,
+                <b>visualisation</b> and <b>open-source software development</b>, aim to support the overarching goal of
+                enhancing workflow transparency and understandability, in order to facilitate workflow reuse.
 
             </div>
 
@@ -86,10 +101,25 @@
                 <h2><i class="fas fa-briefcase stroke-transparent"></i>Diplomas</h2>
                 <ul>
                     <li>
-                        <p class="tags">Master's Degree in Bioinformatics, Computational Biology Track<br><span><a
+                        <p class="tags">Master's Degree in Bioinformatics, Computational Biology Track, with First Class
+                            Honours<br><span><a
                                     href="https://digicosme.cnrs.fr/labex-digicosme-bourses-master/">Digicosme
                                     scholarship for excellence</a> </span><br><span>Paris-Saclay University |
                                 <span>2021-2023</span></span></p>
+                        Included:
+                        <ul class="courses">
+                            <li><b>Advanced Databases:</b> query optimisation and rewriting, indexing structures, query
+                                plans, schema optimisation and data storage strategies.</li>
+                            <li><b>Massive Data Project:</b> designed and built a web
+                                application to query and enrich a large database. Covered client/server architecture,
+                                database design for data volume, security awareness and user needs.</li>
+                            <li><b>Omics Data Analysis and Integrative Biology:</b> statistical modelling and
+                                integration of heterogeneous high-throughput data.</li>
+                            <li><b>Models for Machine Learning:</b> supervised regression and classification,
+                                cross-validation, model selection, random forests, LASSO, SVM.</li>
+                            <li><b>Advanced Machine Learning:</b> semi-supervised learning, ensemble learning, out-of-distribution learning, transfer learning. Included a group project reproducing a
+                                recently published paper and writing a critical report.</li>
+                        </ul>
                     </li>
                     <li>
                         <p class="tags">Double Bachelor's Degree in Mathematics and Computer Science<br><span>Université
@@ -243,25 +273,19 @@
                 <h2><i class="fas fa-briefcase stroke-transparent"></i>Talks</h2>
 
 
-                <h3><i class="fas fa-briefcase stroke-transparent"></i>Peer-reviewed international conferences</h3>
                 <ul>
+
+
                     <li>
-                        <p class="tag2"><b>BioFlow-Insight: Leveraging Graph representations to Facilitate the Reuse of
-                                Bioinformatics Workflows</b> <br><span>ACM REP | <span>June 2024</span> </span></p>
-                    </li>
-                </ul>
-                <h3><i class="fas fa-briefcase stroke-transparent"></i>Peer-reviewed national conferences</h3>
-                <ul>
-                    <li>
-                        <p class="tag2"><b>MetroFlow: automatic, interactive metro‑map visualisation for enhancing
-                                transparency and comprehensibility of Nextflow workflows</b>
-                            <br><span>JOBIM | <span>June 2026</span> </span>
+                        <p class="tag2"><b>A graph-based framework for scientific workflows: modelling, abstraction, and
+                                visualisation for reuse (Planned)
+                            </b><br>
+                            <span><i>EMBL</i> Scientific Workflows Club |
+                                <span> November 2026
+                                </span>
+                            </span>
                         </p>
                     </li>
-
-                </ul>
-                <h3><i class="fas fa-briefcase stroke-transparent"></i>Others</h3>
-                <ul>
 
                     <li>
                         <p class="tag2"><b>Facilitating reuse of Nextflow workflows with structure reconstruction and

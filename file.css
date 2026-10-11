@@ -216,6 +216,11 @@ span {
     font-weight: bolder;
 }
 
+.courses {
+    font-size: 15px;
+    margin-top: 5px;
+}
+
 .tags~a {
     display: none !important;
 }
